@@ -173,4 +173,5 @@ vim.keymap.set('n', '<leader>zc', require('telekasten').show_calendar)
 vim.keymap.set('n', '<leader>zC', ':CalendarT<CR>')
 vim.keymap.set('n', '<leader>zz', require('telekasten').follow_link)
 vim.keymap.set('n', '<leader>zp', require('telekasten').preview_img)
-
+vim.keymap.set('n', '<leader>zb', require('telekasten').show_backlinks)
+vim.keymap.set('n', '<leader>zB', require('telekasten').find_friends)
