@@ -90,7 +90,7 @@ require('telekasten').setup({
 
 	-- tag list theme:
 	-- get_cursor: small tag list at cursor; ivy and dropdown like above
-	show_tags_theme = "ivy",
+	show_tags_theme = "dropdown",
 
 	-- when linking to a note in subdir/, create a [[subdir/title]] link
 	-- instead of a [[title only]] link
@@ -148,8 +148,29 @@ require('telekasten').setup({
 	follow_url_fallback = nil,
 })
 
+--TELEKASTEN BINDS
+-- Help! (show command palette)
+-- vim.keymap.set('n', '<leader>z', require('telekasten').panel)
 vim.keymap.set('n', '<leader>zh', require('telekasten').panel)
+
+-- Finding notes
+vim.keymap.set('n', '<leader>zg', require('telekasten').search_notes)
 vim.keymap.set('n', '<leader>zf', require('telekasten').find_notes)
 vim.keymap.set('n', '<leader>zd', require('telekasten').find_daily_notes)
-vim.keymap.set('n', '<leader>zg', require('telekasten').search_notes)
+vim.keymap.set('n', '<leader>zT', require('telekasten').goto_today)
+vim.keymap.set('n', '<leader>zW', require('telekasten').goto_thisweek)
+vim.keymap.set('n', '<leader>zt', require('telekasten').show_tags)
+
+-- Creating/Editing notes
+vim.keymap.set('n', '<leader>zn', require('telekasten').new_templated_note)
+vim.keymap.set('n', '<leader>zr', require('telekasten').rename_note)
+vim.keymap.set('n', '<leader>zy', require('telekasten').yank_notelink)
+vim.keymap.set('n', '<leader>zi', require('telekasten').paste_img_and_link)
+vim.keymap.set('n', '<leader>zI', require('telekasten').insert_img_link)
+
+--Utility
+vim.keymap.set('n', '<leader>zc', require('telekasten').show_calendar)
+vim.keymap.set('n', '<leader>zC', ':CalendarT<CR>')
 vim.keymap.set('n', '<leader>zz', require('telekasten').follow_link)
+vim.keymap.set('n', '<leader>zp', require('telekasten').preview_img)
+
