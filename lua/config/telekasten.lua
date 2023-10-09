@@ -90,7 +90,7 @@ require('telekasten').setup({
 
 	-- tag list theme:
 	-- get_cursor: small tag list at cursor; ivy and dropdown like above
-	show_tags_theme = "dropdown",
+	show_tags_theme = "ivy",
 
 	-- when linking to a note in subdir/, create a [[subdir/title]] link
 	-- instead of a [[title only]] link
@@ -167,6 +167,7 @@ vim.keymap.set('n', '<leader>zr', require('telekasten').rename_note)
 vim.keymap.set('n', '<leader>zy', require('telekasten').yank_notelink)
 vim.keymap.set('n', '<leader>zi', require('telekasten').paste_img_and_link)
 vim.keymap.set('n', '<leader>zI', require('telekasten').insert_img_link)
+vim.keymap.set('n', '<leader>zl', require('telekasten').insert_link)
 
 --Utility
 vim.keymap.set('n', '<leader>zc', require('telekasten').show_calendar)
